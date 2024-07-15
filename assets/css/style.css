@@ -473,6 +473,10 @@ h6 {
   margin: 15px;
 }
 
+ul li{
+  list-style-type: none;
+}
+
 .navbar-mobile .dropdown ul {
   position: static;
   display: none;
