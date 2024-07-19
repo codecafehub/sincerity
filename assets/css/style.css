@@ -780,7 +780,8 @@ section {
 --------------------------------------------------------------*/
 .about {
   padding: 140px 0;
-  background: url("../img/about-bg.png") top center no-repeat;
+  /* background: url("../img/about-bg.png") top center no-repeat; */
+  background-color: #fff;
   position: relative;
 }
 
@@ -852,6 +853,23 @@ section {
   text-decoration: none;
 }
 
+.marquee {
+
+  box-sizing: border-box;
+  animation: marquee 30s linear infinite;
+}
+
+.marquee img {
+  display: inline-block;
+  /* padding-left: 100%; */
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 @media (max-width: 992px) {
   .about {
     padding: 60px 0;
@@ -861,6 +879,8 @@ section {
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
+
+
 .clients .swiper-slide img {
   opacity: 0.5;
   transition: 0.3s;
@@ -922,6 +942,50 @@ section {
 .clients .owl-dot.active {
   background-color: #0880e8 !important;
 }
+
+.hero-section {
+  position: relative;
+  background-image: url('../img/bed.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 100;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, black, transparent);
+  z-index: 1;
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the left */
+  height: 100%;
+}
+
+.carousel-text {
+  position: relative;
+  z-index: 2;
+  color: white; /* Change text color if needed */
+  padding: 20px;
+  text-align: left; /* Ensure text is left-aligned */
+  max-width: 600px; /* Optional: constrain the width */
+}
+
+
+
+
 
 /*--------------------------------------------------------------
 # Why Us
@@ -1171,11 +1235,7 @@ section {
 /*--------------------------------------------------------------
 # Cta
 --------------------------------------------------------------*/
-.cta {
-  background: linear-gradient(rgba(5, 74, 133, 0.8), rgba(5, 74, 133, 0.9)), url("../img/cta-bg.jpg") fixed center center;
-  background-size: cover;
-  padding: 120px 0;
-}
+
 
 .cta h3 {
   color: #fff;
